@@ -1,0 +1,45 @@
+.Topnavbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: absolute;
+  margin-top: 40px;
+  width: 100%;
+
+  z-index: 2; /* Ensure the navbar stays above the video background */
+}
+.topnavbar-divs-display {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+  float: right;
+  position: absolute;
+  left: 36%;
+  right: 0px;
+  color: rgb(255, 255, 255);
+  /* color: rgb(0, 0, 0, 0.87); */
+  font-family: Heebo, sans-serif;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 500;
+}
+.topnav-icons {
+  color: rgb(245, 223, 8);
+  margin-right: 2px;
+}
+.topnav-hr {
+  width: 81%;
+  height: 0.2vh;
+  background-color: rgb(245, 223, 8);
+  /* background-color: rgba(1, 5, 27, 0.466); */
+  position: absolute;
+  top: 40px;
+  bottom: 50px;
+  left: 250px;
+}
+@media screen and (max-width: 1228px) {
+  .Topnavbar {
+    display: none;
+  }
+}
