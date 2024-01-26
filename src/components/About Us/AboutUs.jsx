@@ -6,9 +6,15 @@ import CountUp from "react-countup";
 import good from "../../assets/images/good-removebg-preview.png";
 import Zoom from "react-reveal/Zoom";
 import smart from "../../assets/images/execute-removebg-preview.png";
+import Fade from "react-reveal/Fade";
 const AboutUs = () => {
+  const email = "uc@regiscajeinteriors.com";
+  const handleGmailClick = () => {
+    // Replace 'mailto' with the recipient's email
+    window.location.href = `mailto:${email}`;
+  };
   return (
-    <div className="About-us-main-div">
+    <div className="About-us-main-div" id="about-us">
       <div className="About-us-div-display">
         <Zoom up>
           <div className="About-us-card-div">
@@ -58,7 +64,9 @@ const AboutUs = () => {
       <div className="who-we-are-display-div ">
         <div>
           <div className="about-us-div2-img">
-            <img src={int} alt="int" className="who-img" />
+            <Fade left>
+              <img src={int} alt="int" className="who-img" />
+            </Fade>
           </div>
         </div>
 
@@ -99,7 +107,9 @@ const AboutUs = () => {
               <div>Professioinal Worker</div>
             </div>
           </div>
-          <div className="know-more">Know More</div>
+          <div className="know-more" onClick={handleGmailClick}>
+            Know More
+          </div>
         </div>
       </div>
     </div>

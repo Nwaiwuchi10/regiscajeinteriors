@@ -10,19 +10,19 @@ const TopNavBar = () => {
         <div>
           <div>
             <MdLocationPin className="topnav-icons" />
-            <span>No 109 Doha, State of Qatar</span>{" "}
+            <span>Old Al Ghanim Doha, State of Qatar</span>{" "}
           </div>
         </div>
         <div>
           <div>
             <IoCall className="topnav-icons" />
-            <span>+974 (70088156 / 66040601)</span>{" "}
+            <span>+974 ( 70088156 / 66040601)</span>{" "}
           </div>
         </div>
         <div>
           <div>
             <FaEnvelope className="topnav-icons" />
-            <span>regiscajedeluxinteriors@gmail.com</span>{" "}
+            <span>uc@regiscajeinteriors.com</span>{" "}
           </div>
         </div>
       </div>

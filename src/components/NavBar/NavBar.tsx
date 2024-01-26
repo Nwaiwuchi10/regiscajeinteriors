@@ -2,9 +2,25 @@ import React, { useState } from "react";
 import "./NavBar.css";
 import logo from "../../assets/images/logo.png";
 import { HiBars3BottomRight } from "react-icons/hi2";
+import { DownloadProfile, Profile } from "../DownloadProfile/DownloadProfile";
 const NavBar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
-
+  const handleServicesClick = () => {
+    const serviceSection: any = document.getElementById("services");
+    serviceSection.scrollIntoView({ behavior: "smooth" });
+  };
+  const handleAboutUsClick = () => {
+    const aboutSection: any = document.getElementById("about-us");
+    aboutSection.scrollIntoView({ behavior: "smooth" });
+  };
+  const handleProjectsClick = () => {
+    const projectSection: any = document.getElementById("projects");
+    projectSection.scrollIntoView({ behavior: "smooth" });
+  };
+  const handleContactClick = () => {
+    const contactSection: any = document.getElementById("contact-us");
+    contactSection.scrollIntoView({ behavior: "smooth" });
+  };
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
   };
@@ -19,15 +35,25 @@ const NavBar = () => {
         <div className="navbar-menu-list">
           <ul>
             <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
+            <li onClick={handleAboutUsClick}>About</li>
+            <li onClick={handleContactClick}>Contact</li>
+            <li onClick={handleServicesClick}>Services</li>
+            <li onClick={handleProjectsClick}>Projects</li>
+            <li>
+              <Profile />{" "}
+            </li>
           </ul>
         </div>
         <div className="navbar-menu">
           <ul>
             <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
+            <li onClick={handleAboutUsClick}>About</li>
+            <li onClick={handleContactClick}>Contact</li>
+            <li onClick={handleServicesClick}>Services</li>
+            <li onClick={handleProjectsClick}>Projects</li>
+            <li>
+              <Profile />{" "}
+            </li>
             {/* Add more menu items as needed */}
           </ul>
         </div>

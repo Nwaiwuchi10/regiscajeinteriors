@@ -115,6 +115,7 @@
   font-size: medium;
   font-weight: 500;
   border-radius: 4px;
+  cursor: pointer;
 }
 .know-more:hover {
   background: gainsboro;
