@@ -3,6 +3,8 @@ import "./NavBar.css";
 import logo from "../../assets/images/logo.png";
 import { HiBars3BottomRight } from "react-icons/hi2";
 import { DownloadProfile, Profile } from "../DownloadProfile/DownloadProfile";
+import { Link } from "react-router-dom";
+import IPAddress from "../IPaddress";
 const NavBar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const handleServicesClick = () => {
@@ -29,30 +31,112 @@ const NavBar = () => {
       <nav className={`navbar ${isMenuOpen ? "open" : ""}`}>
         <div className="navbar-logo">
           <div className="logo-img-div">
-            <img src={logo} alt="logo" className="logo-img" />
+            <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+              <img src={logo} alt="logo" className="logo-img" />
+            </Link>
           </div>
         </div>
         <div className="navbar-menu-list">
           <ul>
-            <li>Home</li>
-            <li onClick={handleAboutUsClick}>About</li>
-            <li onClick={handleContactClick}>Contact</li>
-            <li onClick={handleServicesClick}>Services</li>
-            <li onClick={handleProjectsClick}>Projects</li>
+            <li>
+              {" "}
+              <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/About-us"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                {" "}
+                About
+              </Link>
+            </li>
+            <li>
+              {" "}
+              <Link
+                to="/Contact-us"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                Contact
+              </Link>
+            </li>
+            <li>
+              {" "}
+              <Link
+                to="/Services"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                Services
+              </Link>
+            </li>
+            <li>
+              {" "}
+              <Link
+                to="/Projects"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                Projects
+              </Link>
+            </li>
             <li>
               <Profile />{" "}
+            </li>
+            <li>
+              <IPAddress />{" "}
             </li>
           </ul>
         </div>
         <div className="navbar-menu">
           <ul>
-            <li>Home</li>
-            <li onClick={handleAboutUsClick}>About</li>
-            <li onClick={handleContactClick}>Contact</li>
-            <li onClick={handleServicesClick}>Services</li>
-            <li onClick={handleProjectsClick}>Projects</li>
+            <li>
+              <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
+                {" "}
+                Home
+              </Link>
+            </li>
+            <li>
+              {" "}
+              <Link
+                to="/About-us"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                About
+              </Link>
+            </li>
+            <li>
+              {" "}
+              <Link
+                to="/Contact-us"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                Contact
+              </Link>
+            </li>
+            <li>
+              {" "}
+              <Link
+                to="/Services"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                Services
+              </Link>
+            </li>
+            <li>
+              {" "}
+              <Link
+                to="/Projects"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                Projects
+              </Link>
+            </li>
             <li>
               <Profile />{" "}
+            </li>
+            <li>
+              <IPAddress />{" "}
             </li>
             {/* Add more menu items as needed */}
           </ul>

@@ -7,6 +7,7 @@ import good from "../../assets/images/good-removebg-preview.png";
 import Zoom from "react-reveal/Zoom";
 import smart from "../../assets/images/execute-removebg-preview.png";
 import Fade from "react-reveal/Fade";
+import { Link } from "react-router-dom";
 const AboutUs = () => {
   const email = "uc@regiscajeinteriors.com";
   const handleGmailClick = () => {
@@ -107,8 +108,13 @@ const AboutUs = () => {
               <div>Professioinal Worker</div>
             </div>
           </div>
-          <div className="know-more" onClick={handleGmailClick}>
-            Know More
+          <div className="know-more">
+            <Link
+              to="/About-us"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              Know More
+            </Link>
           </div>
         </div>
       </div>

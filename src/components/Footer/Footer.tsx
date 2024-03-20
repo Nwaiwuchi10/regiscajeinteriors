@@ -5,6 +5,24 @@ import logo from "../../assets/images/logo.png";
 import { Container } from "react-bootstrap";
 import { Typewriter } from "react-simple-typewriter";
 const Footer = () => {
+  const phoneNumber = "+97470088156";
+
+  const facebookProfile = "https://www.facebook.com/regiscajeinteriors/";
+
+  const whatsapp = () => {
+    const url = `https://wa.me/${phoneNumber}`;
+    window.open(url, "_blank");
+  };
+
+  const Twitter = "https://twitter.com/Regiscajedelux";
+
+  const instagram = "https://www.instagram.com/regiscajedeluxinteriors/";
+
+  const email = "uc@regiscajeinteriors.com";
+  const handleGmailClick = () => {
+    // Replace 'mailto' with the recipient's email
+    window.location.href = `mailto:${email}`;
+  };
   return (
     <footer className="footer-main-div">
       <div className="footer-main-div-background-image">
@@ -15,6 +33,37 @@ const Footer = () => {
               <img src={logo} alt="logo" className="footer-img" />{" "}
             </div>
             <div className="footer-regis">REGISCAJE DELUX INTERIORS</div>
+            <div>
+              <a href="" className="text-white me-4">
+                <Link
+                  to={facebookProfile}
+                  target="_blank"
+                  style={{ color: "inherit" }}
+                >
+                  <i className="fab fa-facebook-f"></i>
+                </Link>
+              </a>
+              <a href="" className="text-white me-4">
+                <Link to={Twitter} target="_blank" style={{ color: "inherit" }}>
+                  <i className="fab fa-twitter"></i>
+                </Link>
+              </a>
+              <a href="" className="text-white me-4">
+                <i className="fab fa-google" onClick={handleGmailClick}></i>
+              </a>
+              <a href="" className="text-white me-4">
+                <Link
+                  to={instagram}
+                  target="_blank"
+                  style={{ color: "inherit" }}
+                >
+                  <i className="fab fa-instagram"></i>
+                </Link>
+              </a>
+              <a href="" className="text-white me-4">
+                <i className="fab fa-whatsapp" onClick={whatsapp}></i>
+              </a>
+            </div>
           </div>
 
           <div className="footer-section2">

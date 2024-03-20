@@ -1,0 +1,7 @@
+.social-icons {
+  color: rgb(59, 77, 83);
+  background: rgb(59, 77, 83);
+  position: relative;
+  justify-content: space-around;
+  display: flex;
+}

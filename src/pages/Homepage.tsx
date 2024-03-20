@@ -9,6 +9,7 @@ import Trusted from "../components/Trusted/Trusted";
 import Footer from "../components/Footer/Footer";
 import Projects from "../components/Projects/Projects";
 import Contact from "../components/ContactUs/Contact";
+import IPAddress from "../components/IPaddress";
 
 const Homepage = () => {
   return (

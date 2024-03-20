@@ -8,6 +8,7 @@ import decor from "../../assets/images/decor.jpg";
 import bedroom from "../../assets/images/bedroom.jpg";
 import { projectApi } from "../../Data/Api";
 import axios from "axios";
+import { Link } from "react-router-dom";
 // import Zoom from "react-reveal/Zoom";
 // import Flip from "react-reveal/Flip";
 // import Fade from "react-reveal/Fade";
@@ -26,12 +27,14 @@ const Projects = () => {
 
     fetchPosts();
   }, []);
-  const [hovered, setHovered] = useState(false);
-  const [hovered2, setHovered2] = useState(false);
-  const [hovered3, setHovered3] = useState(false);
-  const [hovered4, setHovered4] = useState(false);
-  const [hovered5, setHovered5] = useState(false);
-  const [hovered6, setHovered6] = useState(false);
+  const [hovered, setHovered] = useState(null);
+  const handleMouseEnter = (itemId: any) => {
+    setHovered(itemId);
+  };
+
+  const handleMouseLeave = () => {
+    setHovered(null);
+  };
 
   return (
     <div className="projects-main-div" id="projects">
@@ -50,145 +53,42 @@ const Projects = () => {
             canvas where innovation meets craftsmanship, and where our passion
             for design and construction shines through.
           </div>
-          <div className="projects-btn">View All Project</div>
+          <div className="projects-btn">
+            <Link
+              to="/Projects"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              {" "}
+              View All Project
+            </Link>
+          </div>
         </div>
       </div>
 
       {/* project pictures */}
       <div className="project-pictures-display">
-        <div>
-          <div
-            className={`image-container ${hovered ? "hovered" : ""}`}
-            onMouseEnter={() => setHovered(true)}
-            onMouseLeave={() => setHovered(false)}
-          >
-            {/* <Flip left> */}
-            <img src={white} alt="ath" className="image" />
-            {/* </Flip> */}
-            {hovered && (
-              <div className="overlay">
-                <h3>Katara Towers</h3>
-                {/* <p>Fairmont & Raffles Lusail Hotel & Residence</p> */}
+        {ViewProjects?.slice(0, 6).map((item: any, index: any) => (
+          <>
+            <div key={item._id}>
+              <div
+                className={`image-container ${hovered ? "hovered" : ""}`}
+                onMouseEnter={() => handleMouseEnter(item._id)}
+                onMouseLeave={handleMouseLeave}
+              >
+                {/* <Flip left> */}
+                <img src={item?.image} alt="ath" className="image" />
+                {/* </Flip> */}
+                {hovered === item._id && (
+                  <div className="overlay">
+                    <h3 className="text-center">{item?.title}</h3>
+                    {/* <p>Fairmont & Raffles Lusail Hotel & Residence</p> */}
+                  </div>
+                )}
               </div>
-            )}
-          </div>
-        </div>
-        <div>
-          <div
-            className={`project-img-div ${hovered2 ? "hovered2" : ""}`}
-            onMouseEnter={() => setHovered2(true)}
-            onMouseLeave={() => setHovered2(false)}
-          >
-            <img src={decor} alt="ath" className="image" />
-
-            {hovered2 && (
-              <div className="overlay2">
-                <h3>Katara Towers</h3>
-                {/* <p>Fairmont & Raffles Lusail Hotel & Residence</p> */}
-              </div>
-            )}
-          </div>
-          <div
-            className={`project-img-div ${hovered3 ? "hovered3" : ""}`}
-            onMouseEnter={() => setHovered3(true)}
-            onMouseLeave={() => setHovered3(false)}
-          >
-            <img src={bedroom} alt="ath" className="image" />
-
-            {hovered3 && (
-              <div className="overlay3">
-                <h3>Katara Towers</h3>
-                {/* <p>Fairmont & Raffles Lusail Hotel & Residence</p> */}
-              </div>
-            )}
-          </div>
-        </div>
+            </div>
+          </>
+        ))}
       </div>
-      <div className="project-second-img-display">
-        <div
-          className={`project-img-div2 ${hovered4 ? "hovered4" : ""}`}
-          onMouseEnter={() => setHovered4(true)}
-          onMouseLeave={() => setHovered4(false)}
-        >
-          {" "}
-          <img src={house} alt="ath" className="image" />
-          {hovered4 && (
-            <div className="overlay4">
-              <h3>Katara Towers</h3>
-              <p>Fairmont & Raffles Lusail Hotel & Residence</p>
-            </div>
-          )}
-        </div>
-        <div
-          className={`project-img-div3 ${hovered5 ? "hovered5" : ""}`}
-          onMouseEnter={() => setHovered5(true)}
-          onMouseLeave={() => setHovered5(false)}
-        >
-          <img src={deco} alt="ath" className="image" />
-
-          {hovered5 && (
-            <div className="overlay5">
-              <h3>Katara Towers</h3>
-              <p>Fairmont & Raffles Lusail Hotel & Residence</p>
-            </div>
-          )}
-        </div>
-        <div
-          className={`project-img-div4 ${hovered6 ? "hovered6" : ""}`}
-          onMouseEnter={() => setHovered6(true)}
-          onMouseLeave={() => setHovered6(false)}
-        >
-          <img src={residential} alt="ath" className="image" />
-
-          {hovered6 && (
-            <div className="overlay6">
-              <h3>Katara Towers</h3>
-              <p>Fairmont & Raffles Lusail Hotel & Residence</p>
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* <div className="project-pictures-display">
-        <div>
-          {" "}
-          <div
-            className={`project-img-div-big${hovered ? "hovered" : ""}`}
-            onMouseEnter={() => setHovered(true)}
-            onMouseLeave={() => setHovered(false)}
-          >
-            <img src={house} alt="house" className="project-imgs" />
-          </div>
-          {hovered && (
-            <div className="overlay">
-              <div className="project-title">Katara Towers</div>
-              <div className="project-description">
-                Fairmont & Raffles Lusail Hotel & Residences
-              </div>
-            </div>
-          )}
-        </div>
-        <div>
-          <div className="project-img-div">
-            <img src={house} alt="house" className="project-imgs" />
-          </div>
-          <div className="project-img-div">
-            <img src={house} alt="house" className="project-imgs" />
-          </div>
-        </div>
-      </div>
-      <div className="project-second-img-display">
-        <div className="project-img-div2">
-          <img src={house} alt="house" className="project-imgs" />
-        </div>
-        <div className="project-img-div3">
-          <img src={house} alt="house" className="project-imgs" />
-        </div>
-        <div className="project-img-div4">
-          <img src={house} alt="house" className="project-imgs" />
-        </div>
-      </div> */}
-      {/* Project pictures */}
     </div>
   );
 };

@@ -3,7 +3,7 @@ import office from "../../assets/images/office-building.png";
 import modern from "../../assets/images/modern-house.png";
 import steel from "../../assets/images/steel-2.png";
 import room from "../../assets/images/room-service.png";
-import blind from "../../assets/images/blind.jpg";
+import blind from "../../assets/images/Blind 1.jpg";
 import construct from "../../assets/images/construction.png";
 import "./Services2.css";
 import cautin from "../../assets/images/cautin.jpg";
@@ -12,10 +12,10 @@ import kitchen from "../../assets/images/kitchen.jpg";
 import { DownloadProfile } from "../DownloadProfile/DownloadProfile";
 import light from "../../assets/images/light.jpg";
 import furniture from "../../assets/images/furniture.jpg";
-import wall from "../../assets/images/wall.jpg";
+import wall from "../../assets/images/wallpaper.jpg";
 import sales from "../../assets/images/sales.jpg";
-import carpet from "../../assets/images/carpet.jpg";
-import pop from "../../assets/images/popp.jpg";
+import carpet from "../../assets/images/carpetsfloor.jpg";
+import pop from "../../assets/images/popsc.jpg";
 const Services2 = () => {
   const email = "uc@regiscajeinteriors.com";
   const handleGmailClick = () => {
